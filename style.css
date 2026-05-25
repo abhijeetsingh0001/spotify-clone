@@ -69,6 +69,7 @@ body {
 
 .right {
   margin: 16px 0px;
+  position: relative;
 }
 
 .header {
@@ -125,14 +126,15 @@ body {
   opacity: 0;
   transition: all 1s ease-out;
 }
-.button >*{
-  margin:0px 12px;
+
+.button>* {
+  margin: 0px 12px;
 }
 
 .signupbtn {
   background-color: rgb(34, 34, 34);
   color: rgb(82, 82, 82);
-   font-weight: bold;
+  font-weight: bold;
   border: none;
   outline: none;
   cursor: pointer;
@@ -144,15 +146,30 @@ body {
   color: white;
 
 }
-.loginbtn{
+
+.loginbtn {
   background-color: white;
   border-radius: 21px;
-  width:79px;
-  color:black;
-  padding:10px;
+  width: 79px;
+  color: black;
+  padding: 10px;
   cursor: pointer;
 }
-.loginbtn:hover{
+
+.loginbtn:hover {
   font-weight: bold;
-  width:80px;
+  font-size: 17px;
+}
+
+.playbar {
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(50, 211, 71);
+  width: 100%;
+  padding: 12px;
+}
+.songsbutton{
+  display: flex;
+  justify-content: center;
+  gap:16px;
 }
