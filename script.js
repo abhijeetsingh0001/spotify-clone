@@ -1,4 +1,4 @@
-console.log("Let's write JavaScript");
+\console.log("Let's write JavaScript");
 
 async function getSongs() {
   let a = await fetch("http://127.0.0.1:5500/songs/");
@@ -30,19 +30,19 @@ async function main() {
   let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0];
 
   for (const song of songs) {
-    songUL.innerHTML += `<li> ${song.replaceAll("%20"," ")}</li>`;
+    songUL.innerHTML += ` <li>
+              <img class="invert" src="music.svg" alt="">
+              <div class="info">
+              <div>${song.replaceAll("%20"," ")}</div>
+              <div>Anant </div></div>
+              <div class="playnow">
+                <span>Play now</span>
+                <img class="invert" src="play.svg" alt="">
+              </div>
+            </li> `;
   }
 
-  // Play the first song
-  let audio = new Audio(songs[0]);
-
-  // audio.play();
-
-  audio.addEventListener("loadeddata", () => {
-    let duration = audio.duration;
-    console.log(duration);
-    // duration is in seconds
-  });
+ 
 }
 
 main();
