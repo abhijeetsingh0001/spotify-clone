@@ -179,4 +179,12 @@ body {
 }
 .songlist ul li{
   list-style-type: decimal;
+  display: flex;
+  gap:34px;
+  cursor:pointer;
+  padding: 12px 0 ;
+
+}
+.playnow{
+  display:flex;
 }
