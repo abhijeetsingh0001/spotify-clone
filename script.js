@@ -1,10 +1,9 @@
 console.log("Let's write JavaScript");
 
 async function getSongs() {
-  let a = await fetch("http://127.0.0.1:5500/song/");
+  let a = await fetch("http://127.0.0.1:5500/songs/");
   let response = await a.text();
 
-  console.log(response);
 
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -16,7 +15,7 @@ async function getSongs() {
     const element = as[index];
 
     if (element.href.endsWith(".mp3")) {
-      songs.push(element.href);
+      songs.push(element.href.split("/songs/")[1]);
     }
   }
 
@@ -28,10 +27,10 @@ async function main() {
   let songs = await getSongs();
   console.log(songs);
 
-  let songUL = document.querySelector(".songlist ul");
+  let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0];
 
   for (const song of songs) {
-    songUL.innerHTML += song;
+    songUL.innerHTML += `<li> ${song.replaceAll("%20"," ")}</li>`;
   }
 
   // Play the first song
