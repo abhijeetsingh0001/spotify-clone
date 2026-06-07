@@ -224,7 +224,7 @@ body {
 .seekbar {
   height: 2px;
   width: 98%;
-  background: 2px solid black;
+  background:  black;
   border-radius: 10px;
   position: absolute;
   bottom: 0;
@@ -239,4 +239,7 @@ body {
   position: relative;
   bottom:6px;
   left:0%;
+}
+.songsbutton{
+  cursor:pointer;
 }
