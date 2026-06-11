@@ -170,7 +170,7 @@ body {
   width: 90%;
   padding: 12px;
   width: 70vw;
-  height: 40px;
+  min-height: 40px;
 
 }
 
@@ -184,6 +184,17 @@ body {
   height: 544px;
   overflow: auto;
   margin-bottom: 44px;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburgerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
 }
 
 .songlist ul {
@@ -229,7 +240,7 @@ body {
   position: absolute;
   bottom: 0;
   margin: 6px;
-
+  cursor: pointer
 }
 
 .circle {
@@ -238,21 +249,126 @@ body {
   border-radius: 13px;
   background-color: black;
   position: relative;
-  bottom: 6px;
+  bottom: 5px;
   left: 0%;
+  transition: left 0.5s;
 }
 
-.songsbutton {
+.songsbutton img {
   cursor: pointer;
 }
 
-.songinfo,
-.songtime {
+.timevol {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.songinfo {
   color: black;
   padding: 0 12px;
 }
 
+.songtime {
+  color: black;
+  padding: 0 12px;
+  width: 125px;
+
+}
+
+.volume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
 .abovebar {
-  display: flex ;
+  display: flex;
   justify-content: space-between;
+  margin: 20px 0;
+}
+
+.close {
+  display: none;
+}
+
+
+
+
+
+
+@media(max-width:1400px) {
+  .left {
+    background-color: black;
+    position: absolute;
+    left: -120%;
+    transition: all.3s;
+    z-index: 1;
+    width: 370px;
+
+  }
+
+  .songinfo,
+  .songtime {
+    width: auto;
+  }
+
+  .left .close {
+    position: absolute;
+    right: 31px;
+    top: 25px;
+    width: 29px;
+  }
+
+  .right {
+    width: 100vw;
+  }
+
+  .timevol {
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+
+  }
+
+  .playbar {
+    width: calc(100vw-105px);
+  }
+
+  .seekbar {
+    width: cacl(100vw-120px);
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .right {
+    margin: 0;
+  }
+
+  .cardcontainer {
+    margin: 0;
+    justify-content: center;
+  }
+
+  .card {
+    width: 44vw;
+
+  }
+
+  .close {
+    display: block;
+  }
+
+  .abovebar {
+    flex-direction: column;
+    gap: 23px;
+    align-items: center;
+  }
 }
